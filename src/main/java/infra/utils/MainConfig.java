@@ -1,10 +1,8 @@
 package infra.utils;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Properties;
 
 public class MainConfig {
@@ -14,6 +12,9 @@ public class MainConfig {
     public static String baseUrl;
     public static int webDriverExplicitWaitInSeconds;
 
+    public static BrowserType browserType;
+
+    public static String hubUrl;
     public static void initMainConfig(){
 
         if (prop == null) {
@@ -22,7 +23,9 @@ public class MainConfig {
         }
 
         baseUrl = readValue("baseUrl");
+        browserType = BrowserType.fromString(readValue("browserType"));
         webDriverExplicitWaitInSeconds = Integer.parseInt(readValue("webDriverExplicitWaitInSeconds"));
+        hubUrl = readValue("hubUrl");
     }
 
     private static Properties readPropertiesFile(){

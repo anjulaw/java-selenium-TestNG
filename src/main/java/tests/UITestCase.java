@@ -8,6 +8,8 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
+import java.net.MalformedURLException;
+
 public class UITestCase {
 
     WebDriver driver = null;
@@ -20,7 +22,7 @@ public class UITestCase {
     }
 
     @BeforeMethod(alwaysRun = true)
-    public void beforeMethod(){
+    public void beforeMethod() throws MalformedURLException {
        driver = WebDriverFactory.getWebDriver();
     }
 
