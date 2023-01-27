@@ -53,6 +53,22 @@ public class NumberArray {
         return numArrNoDuplicate;
     }
 
+    public static void sortArray(int[] numArray){
+        for(int i =0; i<numArray.length -1 ; i++){
+            for(int j = i + 1; j<numArray.length - 1; j++){
+                if(numArray[i]>numArray[j]){
+                    int temp = numArray[i];
+                    numArray[i] = numArray[j];
+                    numArray[j] = temp;
+                }
+            }
+        }
+
+        for(int i:numArray){
+            System.out.println(i + "\t");
+        }
+    }
+
     public static void main(String[] args) {
         /*Integer[] numbers = {10, 4, 1, 4, -10, -50, 32, 21};
         System.out.println("Min max difference is " + differenceMaxMin(numbers));*/
@@ -69,20 +85,22 @@ public class NumberArray {
             System.out.println(x);
         }*/
 
-        int[] arr = {1, 2, 3, 4, 4, 5, 5, 6, 7, 8, 8, 9};
+        int[] arr = {3, 1, 4, 2, 5};
+        sortArray(arr);
 
         // Convert the array to a set
-        Set<Integer> set = new HashSet<>();
+        /*Set<Integer> set = new HashSet<>();
         for (int i : arr) {
             set.add(i);
-        }
+        }*/
 
         // Convert the set back to an array
         //int[] uniqueArr = set.stream().mapToInt(Integer::intValue).toArray();
         //System.out.println(Arrays.toString(uniqueArr));
-        for(int i: set){
+        // Print set
+        /*for(int i: set){
             System.out.println(i);
-        }
+        }*/
 
     }
 }
