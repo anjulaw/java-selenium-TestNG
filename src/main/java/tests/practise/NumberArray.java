@@ -1,9 +1,6 @@
 package tests.practise;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class NumberArray {
 
@@ -69,6 +66,37 @@ public class NumberArray {
         }
     }
 
+    public static void printDuplicates(int[] arr){
+        List<Integer> withOutDuplicate = new ArrayList<>();
+
+        for(int i = 0; i < arr.length;i++){
+            for(int j = i+1; j<arr.length ; j++){
+                if(arr[i] == arr[j]){
+                    withOutDuplicate.add(arr[i]);
+                }
+            }
+        }
+
+        if(withOutDuplicate.size() == 0){
+            System.out.println("No duplicate found");
+        }else {
+            for(int x: withOutDuplicate){
+                System.out.println(x);
+            }
+        }
+    }
+
+    public static void removeDuplicatesWithSet(int[] arr){
+        Set<Integer> number = new HashSet<>();
+        for(int i: arr){
+            number.add(i);
+        }
+
+        for(int j : number){
+            System.out.println(j);
+        }
+    }
+
     public static void main(String[] args) {
         /*Integer[] numbers = {10, 4, 1, 4, -10, -50, 32, 21};
         System.out.println("Min max difference is " + differenceMaxMin(numbers));*/
@@ -80,27 +108,13 @@ public class NumberArray {
         /*int[] numArr = {10,20,20,30,40,50};
 
         int[] numArr1 = removeDuplicates(numArr);
+       */
 
-        for(int x: numArr1){
-            System.out.println(x);
-        }*/
-
-        int[] arr = {3, 1, 4, 2, 5};
-        sortArray(arr);
-
-        // Convert the array to a set
-        /*Set<Integer> set = new HashSet<>();
-        for (int i : arr) {
-            set.add(i);
-        }*/
-
-        // Convert the set back to an array
-        //int[] uniqueArr = set.stream().mapToInt(Integer::intValue).toArray();
-        //System.out.println(Arrays.toString(uniqueArr));
-        // Print set
-        /*for(int i: set){
-            System.out.println(i);
-        }*/
+        int[] arr = {3, 1, 4, 2, 5,6,4,2};
+//        sortArray(arr);
+        printDuplicates(arr);
+        System.out.println("========================");
+        removeDuplicatesWithSet(arr);
 
     }
 }
