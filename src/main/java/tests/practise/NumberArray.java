@@ -66,6 +66,12 @@ public class NumberArray {
         }
     }
 
+    /**
+     *
+     * @param arr
+     * This method prints duplicate values in the array
+     */
+
     public static void printDuplicates(int[] arr){
         List<Integer> withOutDuplicate = new ArrayList<>();
 
@@ -86,6 +92,12 @@ public class NumberArray {
         }
     }
 
+    /**
+     *
+     * @param arr
+     * This method remove the duplicate numbers using Set
+     */
+
     public static void removeDuplicatesWithSet(int[] arr){
         Set<Integer> number = new HashSet<>();
         for(int i: arr){
@@ -94,6 +106,31 @@ public class NumberArray {
 
         for(int j : number){
             System.out.println(j);
+        }
+    }
+
+    /**
+     *
+     * @param numArray
+     * This method sort array in descending order and print the Odd numbers
+     */
+
+    public static void printOddNumbersInArray(int[] numArray){
+
+        for(int i = 0 ; i < numArray.length -1 ;i++){
+            for(int j = i +1; j < numArray.length;j++){
+                if(numArray[i]< numArray[j]){
+                    int temp = numArray[i];
+                    numArray[i] = numArray[j];
+                    numArray[j] = temp;
+                }
+            }
+        }
+
+        for(int i = 0 ; i < numArray.length -1; i++){
+            if(numArray[i]%2 != 0){
+                System.out.println(numArray[i]);
+            }
         }
     }
 
