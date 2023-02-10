@@ -4,6 +4,11 @@ import java.util.*;
 
 public class NumberArray {
 
+    /**
+     * Find the difference between min and max values in array
+     * @param arr
+     * @return
+     */
     public static int differenceMaxMin(Integer[] arr) {
 
         int max ,min ;
@@ -17,6 +22,12 @@ public class NumberArray {
         return max - min;
     }
 
+    /**
+     *Find the highest numbers in the array than n
+     * @param arr
+     * @param n
+     * @return
+     */
     public static boolean existsHigher(int[] arr, int n) {
 
         boolean isHigherExist = false;
@@ -30,6 +41,13 @@ public class NumberArray {
         return isHigherExist;
     }
 
+    /**
+     * This method returns an array after removing the duplicates in the array
+     *
+     *
+     * @param numArray
+     * @return
+     */
     public static int[] removeDuplicates(int[] numArray){
 
         int[] numArrNoDuplicate = new int[numArray.length];
@@ -50,6 +68,10 @@ public class NumberArray {
         return numArrNoDuplicate;
     }
 
+    /**
+     * This method sort the array in ascending order
+     * @param numArray
+     */
     public static void sortArray(int[] numArray){
         for(int i =0; i<numArray.length -1 ; i++){
             for(int j = i + 1; j<numArray.length - 1; j++){
