@@ -12,6 +12,8 @@ public class MainConfig {
     public static String baseUrl;
     public static int webDriverExplicitWaitInSeconds;
 
+    public static int webDriverExtendedExplicitWaitInSeconds;
+
     public static BrowserType browserType;
 
     public static String hubUrl;
@@ -25,6 +27,7 @@ public class MainConfig {
         baseUrl = readValue("baseUrl");
         browserType = BrowserType.fromString(readValue("browserType"));
         webDriverExplicitWaitInSeconds = Integer.parseInt(readValue("webDriverExplicitWaitInSeconds"));
+        webDriverExtendedExplicitWaitInSeconds = Integer.parseInt(readValue("webDriverExtendedExplicitWaitInSeconds"));
         hubUrl = readValue("hubUrl");
     }
 

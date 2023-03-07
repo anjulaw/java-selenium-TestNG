@@ -12,7 +12,7 @@ import java.net.MalformedURLException;
 
 public class UITestCase {
 
-    WebDriver driver = null;
+    public static  WebDriver driver = null;
 
     @BeforeSuite(alwaysRun = true)
     public void initSuite(){
@@ -40,5 +40,10 @@ public class UITestCase {
         }catch (Exception e){
             System.out.println("Browser already closed");
         }
+    }
+
+
+    public static void browseToUrl(String url){
+        driver.navigate().to(url);
     }
 }
