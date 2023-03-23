@@ -58,7 +58,7 @@ public class WebDriverFactory {
 
                 // in order to read console from chrome, need to disable w3c due to chrome 75
                 // restrictions
-                co.setExperimentalOption("w3c", false);
+                co.setExperimentalOption("w3c", true);
 
                 // selenoid related capabilities
                 co.setCapability("enableVNC", true);

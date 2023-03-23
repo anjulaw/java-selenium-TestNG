@@ -1,5 +1,6 @@
 package tests.toolsQATests;
 
+import infra.pages.toolsQA.ToolsQAElementsPage;
 import infra.pages.toolsQA.ToolsQAHomePage;
 import infra.pages.toolsQA.elements.WebTablesPage;
 import infra.utils.MainConfig;
@@ -9,10 +10,12 @@ import tests.UITestCase;
 public class WebTablePractiseTest extends UITestCase {
 
     @Test(description = "This is to practise Web tables")
-    public void webTablesTest(){
+    public void webTablesTest() {
         browseToUrl(MainConfig.baseUrl);
         ToolsQAHomePage toolsQAHomePage = new ToolsQAHomePage(driver);
-        WebTablesPage webTablesPage = toolsQAHomePage.clickElementsCard();
+        ToolsQAElementsPage toolsQAElementsPage = toolsQAHomePage.clickElementsCard();
+
+        WebTablesPage webTablesPage = toolsQAElementsPage.clickWebTablesButton();
 
     }
 }
